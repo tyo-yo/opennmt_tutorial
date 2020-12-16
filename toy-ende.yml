@@ -1,0 +1,21 @@
+save_data: experiments/toy-ende/example
+src_vocab: experiments/toy-ende/example.vocab.src
+tgt_vocab: experiments/toy-ende/example.vocab.tgt
+overwrite: False
+
+data:
+  corpus_1:
+    path_src: data/toy-ende/src-train.txt
+    path_tgt: data/toy-ende/tgt-train.txt
+  valid:
+    path_src: data/toy-ende/src-val.txt
+    path_tgt: data/toy-ende/tgt-val.txt
+
+# Train on single GPU
+world_size: 1
+gpu_ranks: [0]
+
+save_model: experiments/toy-ende/model
+save_checkpoint_steps: 500
+train_steps: 1000
+valid_steps: 500
